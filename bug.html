@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text will be hidden if JavaScript is enabled.
+  </div>
+  <script>
+    // Bug: Incorrect use of innerHTML to remove element.
+    // Attempting to set innerHTML to an empty string does not actually remove the element from the DOM.
+    // It just clears the content inside. 
+    document.getElementById("myDiv").innerHTML = "";
+    // Correct way is to remove the element from its parent node.
+    //let myDiv = document.getElementById('myDiv');
+    //myDiv.parentNode.removeChild(myDiv);
+  </script>
+</body>
+</html>
